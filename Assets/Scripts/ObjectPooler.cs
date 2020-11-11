@@ -53,7 +53,6 @@ public class ObjectPooler : MonoBehaviour
     {
         if (!poolDictionary.ContainsKey(tag))
         {
-            Debug.LogWarning("Object with tag : " + tag + "doesn't exist");
             return null;
         }
 
@@ -63,7 +62,6 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.transform.rotation = rotation;
 
         poolDictionary[tag].Enqueue(objectToSpawn);                 //agar jumlah queue (pool.size) setiap prefab tetap 30
-        //Debug.Log("tag : " + tag + " Queue : " + poolDictionary[tag].Count);
 
         return objectToSpawn;
     }
